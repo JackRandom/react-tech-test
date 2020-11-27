@@ -1,0 +1,9 @@
+.search-input {
+display: flex;
+flex-direction: row;
+width: 25% ;
+height: 25% ;
+border-radius: 2%;
+font-size: 20px;
+padding: 0 10px;
+}
