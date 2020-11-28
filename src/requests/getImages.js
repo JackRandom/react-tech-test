@@ -5,7 +5,7 @@ const getImages = (query) => {
         return Promise.resolve([]);
     } else {
         return axios
-        .get('https://images-api.nasa.gov/search?q=${query}')
+        .get(`https://images-api.nasa.gov/search?q=${query}`)
         .then((response) => {
             const imageResults = response.data.collection.items;
             console.log(imageResults);
@@ -13,7 +13,9 @@ const getImages = (query) => {
                 (media) => media.data[0].media_type === 'image'
             );
             const image = parsedImages.map((image) => image.links[0].href);
+            console.log(image);
             return image;
+            // console.log(response);
         })
         .catch((err) => {
             console.log(err);
